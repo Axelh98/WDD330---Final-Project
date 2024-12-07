@@ -1,0 +1,15 @@
+.currency-btn {
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100px; /* Puedes ajustar el tamaño del botón según lo necesites */
+    height: 120px;
+}
+
+.currency-btn:hover {
+    background-color: #3182ce;
+    transform: scale(1.05); /* Hace que el botón crezca un poco al pasar el mouse */
+}
+
+.currency-btn div {
+    text-align: center;
+}
