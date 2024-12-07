@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para manejar las rutas y renderizar vistas dinámicamente
     const handleRouting = () => {
-        const path = window.location.pathname; // Obtiene el path de la URL
+        const path = window.location.pathname; 
 
         mainContainer.innerHTML = ""; // Limpia el contenedor principal
         
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderCurrencyDetail(mainContainer, currencyCode); // Cargar Currency Detail
                 break;
             default:
-                mainContainer.innerHTML = `<h1 class="text-center">404 - Page Not Found</h1>`; // Página no encontrada
+                mainContainer.innerHTML = `<h1 class="text-center">404 - Page Not Found</h1>`;
         }
     };
 

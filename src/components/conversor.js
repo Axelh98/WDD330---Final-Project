@@ -66,7 +66,7 @@ async function populateCurrencyDropdowns() {
     ];
 
     try {
-        const apiKey = 'c4a36089298122a964a0409a'; // Ajusta según tu entorno
+        const apiKey = 'c4a36089298122a964a0409a'; 
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`);
         const data = await response.json();
 
@@ -94,13 +94,11 @@ async function populateCurrencyDropdowns() {
 
 // Función para obtener el nombre de la moneda (o nombre común)
 function getCurrencyName(currency) {
-    // Aquí puedes agregar más nombres de monedas según sea necesario
     const currencyNames = {
         USD: 'USD Dollar',
         EUR: 'Euro',
         GBP: 'Pound Sterling',
         JPY: 'Japanese Yen',
-        // ... (agregar más monedas)
     };
     return currencyNames[currency] || currency;
 }
