@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "vite": "^6.0.3",
-    "vite-plugin-html": "^3.2.2"
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-static-copy": "^2.2.0"
   }
 }
