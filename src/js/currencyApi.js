@@ -1,5 +1,5 @@
 export async function getSupportedCurrencies() {
-    const apiKey = 'c4a36089298122a964a0409a';  // Asegúrate de colocar tu clave aquí
+    const apiKey = 'c4a36089298122a964a0409a';  
     const response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/codes`);
     const data = await response.json();
 

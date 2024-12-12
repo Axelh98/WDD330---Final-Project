@@ -17,18 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainContainer = document.getElementById("main-content"); 
 
     if (sidebarContainer) {
-        renderSidebar(sidebarContainer); // Renderiza el Sidebar
+        renderSidebar(sidebarContainer);
     } else {
         console.error("Error: Sidebar container not found in the DOM.");
     }
 
-    // Función para manejar las rutas y renderizar vistas dinámicamente
+    
     const handleRouting = () => {
         const path = window.location.pathname; 
 
-        mainContainer.innerHTML = ""; // Limpia el contenedor principal
+        mainContainer.innerHTML = ""; 
         
-        // Renderiza la vista correspondiente según la ruta
+        
         switch (true) {
             case path === "/convertor":
                 renderConvertor(mainContainer); // Cargar Convertor
@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("a[data-link]");
     links.forEach((link) => {
         link.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevenir el comportamiento por defecto (recargar la página)
+            e.preventDefault(); 
             const path = link.getAttribute("href");
-            window.history.pushState(null, "", path); // Cambia la URL sin recargar
-            handleRouting(); // Llama a la función que renderiza la vista
+            window.history.pushState(null, "", path); 
+            handleRouting(); 
         });
     });
 });

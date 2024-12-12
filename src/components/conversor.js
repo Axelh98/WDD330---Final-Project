@@ -103,6 +103,9 @@ function getCurrencyName(currency) {
     return currencyNames[currency] || currency;
 }
 
+// NO FUNCIONA ! ! ! 
+// NO FUNCIONA ! ! ! 
+// NO FUNCIONA ! ! ! 
 // Función para obtener la bandera correspondiente a la moneda
 function getCurrencyFlag(currency) {
     // Mapea las monedas a las banderas correspondientes
@@ -111,7 +114,7 @@ function getCurrencyFlag(currency) {
         EUR: 'eu', // EUR -> EU
         GBP: 'gb', // GBP -> GB
         JPY: 'jp', // JPY -> JP
-        // Agrega más monedas y países según sea necesario
+        
     };
 
     const flagCode = currencyFlags[currency.toUpperCase()] || currency.toLowerCase(); // Si no hay un código de bandera, usa el código de la moneda
