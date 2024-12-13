@@ -3,9 +3,10 @@
 // IMPORT ALL THE COMPONENTS FUNCTIONS
 import { renderSidebar } from "./components/sidebar.js";
 import { renderConvertor } from "./components/conversor.js";
-import { renderDashboard } from "./components/dashboard.js";
+import { renderSmallDashboard} from "./components/dashboard.js";
 import { renderCurrencies } from "./components/currencies.js";
 import { renderCurrencyDetail } from "./components/currencyDetailView.js";
+
 
 // IMPORT ENVIRONMENT VARIABLES
 import dotenv from 'dotenv';
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderConvertor(mainContainer); // Cargar Convertor
                 break;
             case path === "/dashboard":
-                renderDashboard(mainContainer); // Cargar Dashboard
+                renderSmallDashboard(mainContainer); // Cargar Dashboard
                 break;
             case path === "/currencies":
                 renderCurrencies(mainContainer); // Cargar Currencies

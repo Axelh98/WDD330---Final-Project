@@ -5,7 +5,7 @@ export function renderCurrencies(container) {
     container.innerHTML = `
         <div class="p-4 sm:ml-64">
             <h1 class="text-2xl font-bold text-center mb-4">Supported Currencies</h1>
-            <div id="currencies-list" class="grid grid-cols-8 sm:grid-cols-4 md:grid-cols-6 gap-4">
+            <div id="currencies-list" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
                 <!-- Aquí se cargarán las monedas -->
             </div>
         </div>
