@@ -24,7 +24,7 @@ export function renderConvertor(container) {
         </div>
     `;
 
-    // Llenar los selectores de monedas
+
     populateCurrencyDropdowns();
 
     // Configurar evento para el botón Convert
@@ -33,18 +33,22 @@ export function renderConvertor(container) {
         const fromCurrency = document.getElementById("from-currency").value;
         const toCurrency = document.getElementById("to-currency").value;
         const resultDiv = document.getElementById("result");
+    
+        resultDiv.classList.remove('show');  
+    
 
-        // Validar entradas
         if (!amount || amount <= 0) {
             resultDiv.textContent = "Please enter a valid amount.";
+            resultDiv.classList.add('show');  
             return;
         }
-
+    
         if (!fromCurrency || !toCurrency) {
             resultDiv.textContent = "Please select both currencies.";
+            resultDiv.classList.add('show');  
             return;
         }
-
+    
         // Llamar a la lógica de conversión
         const result = await convertCurrency(fromCurrency, toCurrency, amount);
         if (result) {
@@ -55,10 +59,11 @@ export function renderConvertor(container) {
         } else {
             resultDiv.textContent = "Error during currency conversion. Please try again.";
         }
+        resultDiv.classList.add('show');
     });
 }
 
-// Función para llenar los selectores de monedas
+
 async function populateCurrencyDropdowns() {
     const dropdowns = [
         document.getElementById("from-currency"),
@@ -81,7 +86,7 @@ async function populateCurrencyDropdowns() {
                 const option = document.createElement("option");
                 option.value = currency;
                 
-                // Crear el texto con la bandera y el nombre de la moneda
+
                 option.innerHTML = `${getCurrencyFlag(currency)} ${currency}`;
                 
                 dropdown.appendChild(option);
@@ -92,7 +97,7 @@ async function populateCurrencyDropdowns() {
     }
 }
 
-// Función para obtener el nombre de la moneda (o nombre común)
+
 function getCurrencyName(currency) {
     const currencyNames = {
         USD: 'USD Dollar',

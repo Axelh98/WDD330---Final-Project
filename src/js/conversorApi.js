@@ -4,7 +4,7 @@ async function convertCurrency(fromCurrency, toCurrency, amount) {
     const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}`;
 
     try {
-        // Llamada a la API
+        
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error("Error al obtener los datos de la API.");
@@ -19,7 +19,7 @@ async function convertCurrency(fromCurrency, toCurrency, amount) {
 
         // Calcular la cantidad convertida
         const conversionRate = data.conversion_rate;
-        const convertedAmount = (amount * conversionRate).toFixed(2); // Redondear a dos decimales
+        const convertedAmount = (amount * conversionRate).toFixed(2); 
 
         return {
             fromCurrency,
@@ -30,20 +30,8 @@ async function convertCurrency(fromCurrency, toCurrency, amount) {
         };
     } catch (error) {
         console.error("Error:", error.message);
-        return null; // O maneja el error según sea necesario
+        return null; 
     }
 }
-
-// Ejemplo de uso
-(async () => {
-    const result = await convertCurrency("USD", "ARS", 1);
-    if (result) {
-        console.log(
-            `${result.amount} ${result.fromCurrency} equivale a ${result.convertedAmount} ${result.toCurrency} (Tasa de cambio: ${result.conversionRate})`
-        );
-    } else {
-        console.log("No se pudo realizar la conversión.");
-    }
-})();
 
 export { convertCurrency };
